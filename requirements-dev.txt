@@ -1,0 +1,7 @@
+autopep8
+pylint
+nose
+twine
+pdoc3
+Sphinx
+sphinx_rtd_theme
