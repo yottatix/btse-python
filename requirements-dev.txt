@@ -5,3 +5,4 @@ twine
 pdoc3
 Sphinx
 sphinx_rtd_theme
+wheel
