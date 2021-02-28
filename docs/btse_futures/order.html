@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>btse_futures.order API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>btse_futures.order</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import json
+
+from btse_futures.constants import OrderType, Side, TimeInForce
+
+
+class Order:
+    &#34;&#34;&#34;
+    Class to represent a BTSE Order  
+
+    ...
+
+    Attributes
+    ----------
+    size : int  
+        order quantity or size. e.g. 1  
+    price : float  
+        price. e.g. 7000.0  
+    side: str
+        order side. BUY or SELL  
+    time_in_force: str 
+        time the order is in force. Possible options defined in TimeInForce. e.g. GTC  
+    symbol: str  
+        instrument symbol. e.g. BTCPFC  
+    type: str  
+        order type. &#34;LIMIT&#34;, &#34;MARKET&#34;, or &#34;OCO&#34;  
+    txType: str  
+        transaction type  
+    postOnly: bool  
+        Is order post only?  
+    reduceOnly: bool  
+        Is order reduce only?  
+    triggerPrice: float
+        Trigger price. Relevant only for LIMIT and OCO order types  
+    stopPrice: float  
+        Stop price.
+    trailValue: float  
+        Trail value.  
+    clOrderId: str  
+        User defined order id  
+    trigger: str  
+        If an order is a stop loss or take profit order, then this parameter determines the trigger price.  
+        Available values are: 1. markPrice = Mark Price (Default) and 2. lastPrice = Last transacted Price  
+
+    Documentation: https://www.btse.com/apiexplorer/futures/?shell#tocs_orderformv2  
+
+    &#34;&#34;&#34;
+
+    def __init__(self, size: int, price: float, side: str, time_in_force: str, symbol: str, type: str, txType: str, postOnly: bool, reduceOnly: bool, triggerPrice: float, stopPrice: float = None, trailValue: float = None, clOrderId: str = None, trigger: str = None) -&gt; None:
+        assert(isinstance(size, int))
+        assert(isinstance(price, float))
+        assert(isinstance(side, str))
+        assert(isinstance(time_in_force, str))
+        assert(isinstance(symbol, str))
+        assert(isinstance(type, str))
+        assert(isinstance(postOnly, bool))
+        assert(isinstance(reduceOnly, bool))
+        assert(isinstance(triggerPrice, float))
+
+        self.size = size
+        self.price = price
+        self.side = side
+        self.time_in_force = time_in_force
+        self.symbol = symbol
+        self.type = type
+        self.txType = txType
+        self.postOnly = postOnly
+        self.reduceOnly = reduceOnly
+        self.triggerPrice = triggerPrice
+        self.stopPrice = stopPrice
+        self.trailValue = trailValue
+        self.clOrderId = clOrderId
+        self.trigger = trigger
+
+    @property
+    def quantity(self):
+        return self.size
+
+    def to_json(self):
+        json_string = json.dumps(self.order_without_none_values())
+        print(f&#39;json string: {json_string}&#39;)
+        return json_string
+
+    def order_without_none_values(self):
+        order_dict = self.__dict__
+        for key, value in list(order_dict.items()):
+            if value is None:
+                del order_dict[key]
+        return order_dict
+
+
+class OpenOrder:
+    &#34;&#34;&#34;
+    open order endpoint response format
+    https://www.btse.com/apiexplorer/futures/#tocs_positionrespv2_1
+
+    Example:  
+    --------  
+
+    `{
+        &#34;orderType&#34;: 0,
+        &#34;price&#34;: 6875,
+        &#34;size&#34;: 4,
+        &#34;side&#34;: &#34;BUY&#34;,
+        &#34;filledSize&#34;: 3,
+        &#34;orderValue&#34;: 20.625,
+        &#34;pegPriceMin&#34;: 0,
+        &#34;pegPriceMax&#34;: 0,
+        &#34;pegPriceDeviation&#34;: 0,
+        &#34;cancelDuration&#34;: 0,
+        &#34;timestamp&#34;: 1576661434072,
+        &#34;orderID&#34;: &#34;string&#34;,
+        &#34;stealth&#34;: 0.2,
+        &#34;triggerOrder&#34;: true,
+        &#34;triggered&#34;: true,
+        &#34;triggerPrice&#34;: 0,
+        &#34;triggerOriginalPrice&#34;: 0,
+        &#34;triggerOrderType&#34;: 1001,
+        &#34;triggerTrailingStopDeviation&#34;: 0,
+        &#34;triggerStopPrice&#34;: 0,
+        &#34;symbol&#34;: &#34;string&#34;,
+        &#34;trailValue&#34;: 0,
+        &#34;clOrderID&#34;: &#34;market001&#34;,
+        &#34;reduceOnly&#34;: true,
+        &#34;orderState&#34;: &#34;string&#34;
+    }`
+    &#34;&#34;&#34;
+
+    def __init__(self) -&gt; None:
+        self.orderType = 0
+        self.price = 0
+        self.size = 0
+        self.side = &#39;&#39;
+        self.filledSize = 0
+        self.orderValue = 0.0
+        self.pegPriceMin = 0
+        self.pegPriceMax = 0
+        self.pegPriceDeviation = 0
+        self.cancelDuration = 0
+        self.timestamp = 0
+        self.orderID = &#39;&#39;
+        self.stealth = 0.0
+        self.triggerOrder = &#39;&#39;
+        self.triggered = &#39;&#39;
+        self.triggerPrice = 0
+        self.triggerOriginalPrice = 0
+        self.triggerOrderType = 0
+        self.triggerTrailingStopDeviation = 0
+        self.triggerStopPrice = 0
+        self.symbol = &#39;&#39;
+        self.trailValue = 0
+        self.clOrderID = &#39;&#39;
+        self.reduceOnly = &#39;&#39;
+        self.orderState = &#39;&#39;
+
+    @staticmethod
+    def from_dict(data):
+        open_order = OpenOrder()
+        open_order.orderType = data.get(&#39;orderType&#39;)
+        open_order.price = data.get(&#39;price&#39;)
+        open_order.size = data.get(&#39;size&#39;)
+        open_order.side = data.get(&#39;side&#39;)
+        open_order.filledSize = data.get(&#39;filledSize&#39;)
+        open_order.orderValue = data.get(&#39;orderValue&#39;)
+        open_order.pegPriceMin = data.get(&#39;pegPriceMin&#39;)
+        open_order.pegPriceMax = data.get(&#39;pegPriceMax&#39;)
+        open_order.pegPriceDeviation = data.get(&#39;pegPriceDeviation&#39;)
+        open_order.cancelDuration = data.get(&#39;cancelDuration&#39;)
+        open_order.timestamp = data.get(&#39;timestamp&#39;)
+        open_order.orderID = data.get(&#39;orderID&#39;)
+        open_order.stealth = data.get(&#39;stealth&#39;)
+        open_order.triggerOrder = data.get(&#39;triggerOrder&#39;)
+        open_order.triggered = data.get(&#39;triggered&#39;)
+        open_order.triggerPrice = data.get(&#39;triggerPrice&#39;)
+        open_order.triggerOriginalPrice = data.get(&#39;triggerOriginalPrice&#39;)
+        open_order.triggerOrderType = data.get(&#39;triggerOrderType&#39;)
+        open_order.triggerTrailingStopDeviation = data.get(
+            &#39;triggerTrailingStopDeviation&#39;)
+        open_order.triggerStopPrice = data.get(&#39;triggerStopPrice&#39;)
+        open_order.symbol = data.get(&#39;symbol&#39;)
+        open_order.trailValue = data.get(&#39;trailValue&#39;)
+        open_order.clOrderID = data.get(&#39;clOrderID&#39;)
+        open_order.reduceOnly = data.get(&#39;reduceOnly&#39;)
+        open_order.orderState = data.get(&#39;orderState&#39;)
+        return open_order
+
+
+class OrderResponseV21:
+    &#34;&#34;&#34;
+    Order Response V2.1  
+    Documentation -- https://www.btse.com/apiexplorer/futures/?shell#tocs_orderrespv2_1  
+    &#34;&#34;&#34;
+
+    def __init__(self) -&gt; None:
+        self.status = 0
+        self.symbol = &#39;&#39;
+        self.orderType = 0
+        self.price = 0.0
+        self.side = &#39;&#39;
+        self.size = 0
+        self.orderID = &#39;&#39;
+        self.timestamp = 0
+        self.triggerPrice = 0.0
+        self.trigger = &#39;&#39;
+        self.deviation = 0.0
+        self.stealth = 0.0
+        self.message = &#39;&#39;
+        self.avgFillPrice = 0.0
+        self.fillSize = 0.0
+        self.clOrderID = &#39;&#39;
+
+    @staticmethod
+    def from_dict(data):
+        order_response_v21 = OrderResponseV21()
+        order_response_v21.status = data.get(&#39;status&#39;)
+        order_response_v21.symbol = data.get(&#39;symbol&#39;)
+        order_response_v21.orderType = data.get(&#39;orderType&#39;)
+        order_response_v21.price = data.get(&#39;price&#39;)
+        order_response_v21.side = data.get(&#39;side&#39;)
+        order_response_v21.size = data.get(&#39;size&#39;)
+        order_response_v21.orderID = data.get(&#39;orderID&#39;)
+        order_response_v21.timestamp = data.get(&#39;timestamp&#39;)
+        order_response_v21.triggerPrice = data.get(&#39;triggerPrice&#39;)
+        order_response_v21.trigger = data.get(&#39;trigger&#39;)
+        order_response_v21.deviation = data.get(&#39;deviation&#39;)
+        order_response_v21.stealth = data.get(&#39;stealth&#39;)
+        order_response_v21.message = data.get(&#39;message&#39;)
+        order_response_v21.avgFillPrice = data.get(&#39;avgFillPrice&#39;)
+        order_response_v21.fillSize = data.get(&#39;fillSize&#39;)
+        order_response_v21.clOrderID = data.get(&#39;clOrderID&#39;)
+        return order_response_v21</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="btse_futures.order.OpenOrder"><code class="flex name class">
+<span>class <span class="ident">OpenOrder</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>open order endpoint response format
+<a href="https://www.btse.com/apiexplorer/futures/#tocs_positionrespv2_1">https://www.btse.com/apiexplorer/futures/#tocs_positionrespv2_1</a></p>
+<h2 id="example">Example:</h2>
+<p><code>{
+"orderType": 0,
+"price": 6875,
+"size": 4,
+"side": "BUY",
+"filledSize": 3,
+"orderValue": 20.625,
+"pegPriceMin": 0,
+"pegPriceMax": 0,
+"pegPriceDeviation": 0,
+"cancelDuration": 0,
+"timestamp": 1576661434072,
+"orderID": "string",
+"stealth": 0.2,
+"triggerOrder": true,
+"triggered": true,
+"triggerPrice": 0,
+"triggerOriginalPrice": 0,
+"triggerOrderType": 1001,
+"triggerTrailingStopDeviation": 0,
+"triggerStopPrice": 0,
+"symbol": "string",
+"trailValue": 0,
+"clOrderID": "market001",
+"reduceOnly": true,
+"orderState": "string"
+}</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class OpenOrder:
+    &#34;&#34;&#34;
+    open order endpoint response format
+    https://www.btse.com/apiexplorer/futures/#tocs_positionrespv2_1
+
+    Example:  
+    --------  
+
+    `{
+        &#34;orderType&#34;: 0,
+        &#34;price&#34;: 6875,
+        &#34;size&#34;: 4,
+        &#34;side&#34;: &#34;BUY&#34;,
+        &#34;filledSize&#34;: 3,
+        &#34;orderValue&#34;: 20.625,
+        &#34;pegPriceMin&#34;: 0,
+        &#34;pegPriceMax&#34;: 0,
+        &#34;pegPriceDeviation&#34;: 0,
+        &#34;cancelDuration&#34;: 0,
+        &#34;timestamp&#34;: 1576661434072,
+        &#34;orderID&#34;: &#34;string&#34;,
+        &#34;stealth&#34;: 0.2,
+        &#34;triggerOrder&#34;: true,
+        &#34;triggered&#34;: true,
+        &#34;triggerPrice&#34;: 0,
+        &#34;triggerOriginalPrice&#34;: 0,
+        &#34;triggerOrderType&#34;: 1001,
+        &#34;triggerTrailingStopDeviation&#34;: 0,
+        &#34;triggerStopPrice&#34;: 0,
+        &#34;symbol&#34;: &#34;string&#34;,
+        &#34;trailValue&#34;: 0,
+        &#34;clOrderID&#34;: &#34;market001&#34;,
+        &#34;reduceOnly&#34;: true,
+        &#34;orderState&#34;: &#34;string&#34;
+    }`
+    &#34;&#34;&#34;
+
+    def __init__(self) -&gt; None:
+        self.orderType = 0
+        self.price = 0
+        self.size = 0
+        self.side = &#39;&#39;
+        self.filledSize = 0
+        self.orderValue = 0.0
+        self.pegPriceMin = 0
+        self.pegPriceMax = 0
+        self.pegPriceDeviation = 0
+        self.cancelDuration = 0
+        self.timestamp = 0
+        self.orderID = &#39;&#39;
+        self.stealth = 0.0
+        self.triggerOrder = &#39;&#39;
+        self.triggered = &#39;&#39;
+        self.triggerPrice = 0
+        self.triggerOriginalPrice = 0
+        self.triggerOrderType = 0
+        self.triggerTrailingStopDeviation = 0
+        self.triggerStopPrice = 0
+        self.symbol = &#39;&#39;
+        self.trailValue = 0
+        self.clOrderID = &#39;&#39;
+        self.reduceOnly = &#39;&#39;
+        self.orderState = &#39;&#39;
+
+    @staticmethod
+    def from_dict(data):
+        open_order = OpenOrder()
+        open_order.orderType = data.get(&#39;orderType&#39;)
+        open_order.price = data.get(&#39;price&#39;)
+        open_order.size = data.get(&#39;size&#39;)
+        open_order.side = data.get(&#39;side&#39;)
+        open_order.filledSize = data.get(&#39;filledSize&#39;)
+        open_order.orderValue = data.get(&#39;orderValue&#39;)
+        open_order.pegPriceMin = data.get(&#39;pegPriceMin&#39;)
+        open_order.pegPriceMax = data.get(&#39;pegPriceMax&#39;)
+        open_order.pegPriceDeviation = data.get(&#39;pegPriceDeviation&#39;)
+        open_order.cancelDuration = data.get(&#39;cancelDuration&#39;)
+        open_order.timestamp = data.get(&#39;timestamp&#39;)
+        open_order.orderID = data.get(&#39;orderID&#39;)
+        open_order.stealth = data.get(&#39;stealth&#39;)
+        open_order.triggerOrder = data.get(&#39;triggerOrder&#39;)
+        open_order.triggered = data.get(&#39;triggered&#39;)
+        open_order.triggerPrice = data.get(&#39;triggerPrice&#39;)
+        open_order.triggerOriginalPrice = data.get(&#39;triggerOriginalPrice&#39;)
+        open_order.triggerOrderType = data.get(&#39;triggerOrderType&#39;)
+        open_order.triggerTrailingStopDeviation = data.get(
+            &#39;triggerTrailingStopDeviation&#39;)
+        open_order.triggerStopPrice = data.get(&#39;triggerStopPrice&#39;)
+        open_order.symbol = data.get(&#39;symbol&#39;)
+        open_order.trailValue = data.get(&#39;trailValue&#39;)
+        open_order.clOrderID = data.get(&#39;clOrderID&#39;)
+        open_order.reduceOnly = data.get(&#39;reduceOnly&#39;)
+        open_order.orderState = data.get(&#39;orderState&#39;)
+        return open_order</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="btse_futures.order.OpenOrder.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data):
+    open_order = OpenOrder()
+    open_order.orderType = data.get(&#39;orderType&#39;)
+    open_order.price = data.get(&#39;price&#39;)
+    open_order.size = data.get(&#39;size&#39;)
+    open_order.side = data.get(&#39;side&#39;)
+    open_order.filledSize = data.get(&#39;filledSize&#39;)
+    open_order.orderValue = data.get(&#39;orderValue&#39;)
+    open_order.pegPriceMin = data.get(&#39;pegPriceMin&#39;)
+    open_order.pegPriceMax = data.get(&#39;pegPriceMax&#39;)
+    open_order.pegPriceDeviation = data.get(&#39;pegPriceDeviation&#39;)
+    open_order.cancelDuration = data.get(&#39;cancelDuration&#39;)
+    open_order.timestamp = data.get(&#39;timestamp&#39;)
+    open_order.orderID = data.get(&#39;orderID&#39;)
+    open_order.stealth = data.get(&#39;stealth&#39;)
+    open_order.triggerOrder = data.get(&#39;triggerOrder&#39;)
+    open_order.triggered = data.get(&#39;triggered&#39;)
+    open_order.triggerPrice = data.get(&#39;triggerPrice&#39;)
+    open_order.triggerOriginalPrice = data.get(&#39;triggerOriginalPrice&#39;)
+    open_order.triggerOrderType = data.get(&#39;triggerOrderType&#39;)
+    open_order.triggerTrailingStopDeviation = data.get(
+        &#39;triggerTrailingStopDeviation&#39;)
+    open_order.triggerStopPrice = data.get(&#39;triggerStopPrice&#39;)
+    open_order.symbol = data.get(&#39;symbol&#39;)
+    open_order.trailValue = data.get(&#39;trailValue&#39;)
+    open_order.clOrderID = data.get(&#39;clOrderID&#39;)
+    open_order.reduceOnly = data.get(&#39;reduceOnly&#39;)
+    open_order.orderState = data.get(&#39;orderState&#39;)
+    return open_order</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="btse_futures.order.Order"><code class="flex name class">
+<span>class <span class="ident">Order</span></span>
+<span>(</span><span>size: int, price: float, side: str, time_in_force: str, symbol: str, type: str, txType: str, postOnly: bool, reduceOnly: bool, triggerPrice: float, stopPrice: float = None, trailValue: float = None, clOrderId: str = None, trigger: str = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class to represent a BTSE Order
+</p>
+<p>&hellip;</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>size</code></strong> :&ensp;<code>int
+</code></dt>
+<dd>order quantity or size. e.g. 1</dd>
+<dt><strong><code>price</code></strong> :&ensp;<code>float
+</code></dt>
+<dd>price. e.g. 7000.0</dd>
+<dt><strong><code>side</code></strong> :&ensp;<code>str</code></dt>
+<dd>order side. BUY or SELL</dd>
+<dt><strong><code>time_in_force</code></strong> :&ensp;<code>str </code></dt>
+<dd>time the order is in force. Possible options defined in TimeInForce. e.g. GTC</dd>
+<dt><strong><code>symbol</code></strong> :&ensp;<code>str
+</code></dt>
+<dd>instrument symbol. e.g. BTCPFC</dd>
+<dt><strong><code>type</code></strong> :&ensp;<code>str
+</code></dt>
+<dd>order type. "LIMIT", "MARKET", or "OCO"</dd>
+<dt><strong><code>txType</code></strong> :&ensp;<code>str
+</code></dt>
+<dd>transaction type</dd>
+<dt><strong><code>postOnly</code></strong> :&ensp;<code>bool
+</code></dt>
+<dd>Is order post only?</dd>
+<dt><strong><code>reduceOnly</code></strong> :&ensp;<code>bool
+</code></dt>
+<dd>Is order reduce only?</dd>
+<dt><strong><code>triggerPrice</code></strong> :&ensp;<code>float</code></dt>
+<dd>Trigger price. Relevant only for LIMIT and OCO order types</dd>
+<dt><strong><code>stopPrice</code></strong> :&ensp;<code>float
+</code></dt>
+<dd>Stop price.</dd>
+<dt><strong><code>trailValue</code></strong> :&ensp;<code>float
+</code></dt>
+<dd>Trail value.</dd>
+<dt><strong><code>clOrderId</code></strong> :&ensp;<code>str
+</code></dt>
+<dd>User defined order id</dd>
+<dt><strong><code>trigger</code></strong> :&ensp;<code>str
+</code></dt>
+<dd>If an order is a stop loss or take profit order, then this parameter determines the trigger price.<br>
+Available values are: 1. markPrice = Mark Price (Default) and 2. lastPrice = Last transacted Price</dd>
+<dt><strong><code>Documentation</code></strong> :&ensp;<code>&lt;https://www.btse.com/apiexplorer/futures/?shell#tocs_orderformv2&gt;</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Order:
+    &#34;&#34;&#34;
+    Class to represent a BTSE Order  
+
+    ...
+
+    Attributes
+    ----------
+    size : int  
+        order quantity or size. e.g. 1  
+    price : float  
+        price. e.g. 7000.0  
+    side: str
+        order side. BUY or SELL  
+    time_in_force: str 
+        time the order is in force. Possible options defined in TimeInForce. e.g. GTC  
+    symbol: str  
+        instrument symbol. e.g. BTCPFC  
+    type: str  
+        order type. &#34;LIMIT&#34;, &#34;MARKET&#34;, or &#34;OCO&#34;  
+    txType: str  
+        transaction type  
+    postOnly: bool  
+        Is order post only?  
+    reduceOnly: bool  
+        Is order reduce only?  
+    triggerPrice: float
+        Trigger price. Relevant only for LIMIT and OCO order types  
+    stopPrice: float  
+        Stop price.
+    trailValue: float  
+        Trail value.  
+    clOrderId: str  
+        User defined order id  
+    trigger: str  
+        If an order is a stop loss or take profit order, then this parameter determines the trigger price.  
+        Available values are: 1. markPrice = Mark Price (Default) and 2. lastPrice = Last transacted Price  
+
+    Documentation: https://www.btse.com/apiexplorer/futures/?shell#tocs_orderformv2  
+
+    &#34;&#34;&#34;
+
+    def __init__(self, size: int, price: float, side: str, time_in_force: str, symbol: str, type: str, txType: str, postOnly: bool, reduceOnly: bool, triggerPrice: float, stopPrice: float = None, trailValue: float = None, clOrderId: str = None, trigger: str = None) -&gt; None:
+        assert(isinstance(size, int))
+        assert(isinstance(price, float))
+        assert(isinstance(side, str))
+        assert(isinstance(time_in_force, str))
+        assert(isinstance(symbol, str))
+        assert(isinstance(type, str))
+        assert(isinstance(postOnly, bool))
+        assert(isinstance(reduceOnly, bool))
+        assert(isinstance(triggerPrice, float))
+
+        self.size = size
+        self.price = price
+        self.side = side
+        self.time_in_force = time_in_force
+        self.symbol = symbol
+        self.type = type
+        self.txType = txType
+        self.postOnly = postOnly
+        self.reduceOnly = reduceOnly
+        self.triggerPrice = triggerPrice
+        self.stopPrice = stopPrice
+        self.trailValue = trailValue
+        self.clOrderId = clOrderId
+        self.trigger = trigger
+
+    @property
+    def quantity(self):
+        return self.size
+
+    def to_json(self):
+        json_string = json.dumps(self.order_without_none_values())
+        print(f&#39;json string: {json_string}&#39;)
+        return json_string
+
+    def order_without_none_values(self):
+        order_dict = self.__dict__
+        for key, value in list(order_dict.items()):
+            if value is None:
+                del order_dict[key]
+        return order_dict</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="btse_futures.order.Order.quantity"><code class="name">var <span class="ident">quantity</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def quantity(self):
+    return self.size</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="btse_futures.order.Order.order_without_none_values"><code class="name flex">
+<span>def <span class="ident">order_without_none_values</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def order_without_none_values(self):
+    order_dict = self.__dict__
+    for key, value in list(order_dict.items()):
+        if value is None:
+            del order_dict[key]
+    return order_dict</code></pre>
+</details>
+</dd>
+<dt id="btse_futures.order.Order.to_json"><code class="name flex">
+<span>def <span class="ident">to_json</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_json(self):
+    json_string = json.dumps(self.order_without_none_values())
+    print(f&#39;json string: {json_string}&#39;)
+    return json_string</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="btse_futures.order.OrderResponseV21"><code class="flex name class">
+<span>class <span class="ident">OrderResponseV21</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Order Response V2.1<br>
+Documentation &ndash; <a href="https://www.btse.com/apiexplorer/futures/?shell#tocs_orderrespv2_1">https://www.btse.com/apiexplorer/futures/?shell#tocs_orderrespv2_1</a></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class OrderResponseV21:
+    &#34;&#34;&#34;
+    Order Response V2.1  
+    Documentation -- https://www.btse.com/apiexplorer/futures/?shell#tocs_orderrespv2_1  
+    &#34;&#34;&#34;
+
+    def __init__(self) -&gt; None:
+        self.status = 0
+        self.symbol = &#39;&#39;
+        self.orderType = 0
+        self.price = 0.0
+        self.side = &#39;&#39;
+        self.size = 0
+        self.orderID = &#39;&#39;
+        self.timestamp = 0
+        self.triggerPrice = 0.0
+        self.trigger = &#39;&#39;
+        self.deviation = 0.0
+        self.stealth = 0.0
+        self.message = &#39;&#39;
+        self.avgFillPrice = 0.0
+        self.fillSize = 0.0
+        self.clOrderID = &#39;&#39;
+
+    @staticmethod
+    def from_dict(data):
+        order_response_v21 = OrderResponseV21()
+        order_response_v21.status = data.get(&#39;status&#39;)
+        order_response_v21.symbol = data.get(&#39;symbol&#39;)
+        order_response_v21.orderType = data.get(&#39;orderType&#39;)
+        order_response_v21.price = data.get(&#39;price&#39;)
+        order_response_v21.side = data.get(&#39;side&#39;)
+        order_response_v21.size = data.get(&#39;size&#39;)
+        order_response_v21.orderID = data.get(&#39;orderID&#39;)
+        order_response_v21.timestamp = data.get(&#39;timestamp&#39;)
+        order_response_v21.triggerPrice = data.get(&#39;triggerPrice&#39;)
+        order_response_v21.trigger = data.get(&#39;trigger&#39;)
+        order_response_v21.deviation = data.get(&#39;deviation&#39;)
+        order_response_v21.stealth = data.get(&#39;stealth&#39;)
+        order_response_v21.message = data.get(&#39;message&#39;)
+        order_response_v21.avgFillPrice = data.get(&#39;avgFillPrice&#39;)
+        order_response_v21.fillSize = data.get(&#39;fillSize&#39;)
+        order_response_v21.clOrderID = data.get(&#39;clOrderID&#39;)
+        return order_response_v21</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="btse_futures.order.OrderResponseV21.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data):
+    order_response_v21 = OrderResponseV21()
+    order_response_v21.status = data.get(&#39;status&#39;)
+    order_response_v21.symbol = data.get(&#39;symbol&#39;)
+    order_response_v21.orderType = data.get(&#39;orderType&#39;)
+    order_response_v21.price = data.get(&#39;price&#39;)
+    order_response_v21.side = data.get(&#39;side&#39;)
+    order_response_v21.size = data.get(&#39;size&#39;)
+    order_response_v21.orderID = data.get(&#39;orderID&#39;)
+    order_response_v21.timestamp = data.get(&#39;timestamp&#39;)
+    order_response_v21.triggerPrice = data.get(&#39;triggerPrice&#39;)
+    order_response_v21.trigger = data.get(&#39;trigger&#39;)
+    order_response_v21.deviation = data.get(&#39;deviation&#39;)
+    order_response_v21.stealth = data.get(&#39;stealth&#39;)
+    order_response_v21.message = data.get(&#39;message&#39;)
+    order_response_v21.avgFillPrice = data.get(&#39;avgFillPrice&#39;)
+    order_response_v21.fillSize = data.get(&#39;fillSize&#39;)
+    order_response_v21.clOrderID = data.get(&#39;clOrderID&#39;)
+    return order_response_v21</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="btse_futures" href="index.html">btse_futures</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="btse_futures.order.OpenOrder" href="#btse_futures.order.OpenOrder">OpenOrder</a></code></h4>
+<ul class="">
+<li><code><a title="btse_futures.order.OpenOrder.from_dict" href="#btse_futures.order.OpenOrder.from_dict">from_dict</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="btse_futures.order.Order" href="#btse_futures.order.Order">Order</a></code></h4>
+<ul class="">
+<li><code><a title="btse_futures.order.Order.order_without_none_values" href="#btse_futures.order.Order.order_without_none_values">order_without_none_values</a></code></li>
+<li><code><a title="btse_futures.order.Order.quantity" href="#btse_futures.order.Order.quantity">quantity</a></code></li>
+<li><code><a title="btse_futures.order.Order.to_json" href="#btse_futures.order.Order.to_json">to_json</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="btse_futures.order.OrderResponseV21" href="#btse_futures.order.OrderResponseV21">OrderResponseV21</a></code></h4>
+<ul class="">
+<li><code><a title="btse_futures.order.OrderResponseV21.from_dict" href="#btse_futures.order.OrderResponseV21.from_dict">from_dict</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
