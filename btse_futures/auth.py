@@ -4,6 +4,26 @@ import time
 import typing
 
 
+class Credentials:
+    """
+    A class to represent Credentials.
+
+    ...
+
+    Attributes
+    ----------
+    api_key : str
+        the api key
+    secret : str
+        the secret
+
+    """
+
+    def __init__(self, api_key, secret) -> None:
+        self.api_key = api_key
+        self.secret = secret
+
+
 class ApiKey:
     """
     A class to represent an ApiKey.

@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="btse-python",
-    version="0.0.1",
+    version="0.0.2",
     author="Yottatix",
     author_email="st@yottatix.com",
     description="Python module to connect to btse.com",
@@ -21,6 +21,6 @@ setup(
         "Operating System :: OS Independent",
     ],
     packages=find_packages(exclude=['tests', 'tests.*']),
-    install_requires=['requests'],
+    install_requires=['requests', 'websocket-client'],
     python_requires='>=3.6',
 )

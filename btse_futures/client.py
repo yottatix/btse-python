@@ -6,6 +6,7 @@ import requests
 from requests.api import get
 
 from btse_futures.auth import ApiKey, create_authentication_headers
+from btse_futures.index import PriceIndex
 from btse_futures.order import OpenOrder, Order, OrderResponseV21
 from btse_futures.position import Position
 from btse_futures.wallet import Wallet
@@ -124,3 +125,31 @@ class RestClient:
             return cancelled_orders_response
         else:
             return r.json()
+
+    def get_price_index(self, symbol):
+        """
+        Get price index.
+        This is a public endpoint and does not require authentication.
+
+        Parameters
+        ----------
+        symbol : str
+            Symbol representing the market
+
+        Returns
+        -------
+        Lastest index price, last traded price, and latest mark price.
+        """
+        get_price_index_params = {
+            'symbol': symbol
+        }
+        headers = {
+            'Accept': 'application/json'
+        }
+        path = f'{PATH_ROOT}/price'
+        body = ''
+        r = requests.get(
+            self.btse_url + path, params=get_price_index_params, headers=headers)
+        data = r.json()
+        price_index = PriceIndex.from_dict(data[0])
+        return price_index
