@@ -156,8 +156,6 @@ class WebsocketConnection:
         except Exception as e:
             self.on_error(f'callback invocation error: {str(e)}')
 
-        if self.request.auto_close:
-            self.close()
 
     def close_on_error(self):
         if self.ws is not None:
